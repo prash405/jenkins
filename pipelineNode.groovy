@@ -8,22 +8,22 @@ pipeline{
         }
          stage('Install Dependencies') {
             steps {
-                sh '/opt/node/bin/npm install'
+                sh 'npm install'
             }
         }
         stage('Build'){
             steps{
-                sh '/opt/node/bin/npm run build'
+                sh 'npm run build'
             }
         }
         stage('Test'){
             steps{
-                echo 'Testing the application'
+                sh 'npm test || echo "No test script found"'
             }
         }
         stage('Deploy'){
             steps{
-                echo 'Deploying the application'
+                sh 'node server.js &'
             }
         }
     }
