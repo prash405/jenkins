@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('git pull'){
             steps{
-                git branch: 'main', url: 'https://github.com/prash405/javaProject.git'
+                git branch: 'main', url: 'https://github.com/prash405/node.git'
             }
         }
          stage('Install Dependencies') {
