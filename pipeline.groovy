@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo 'Building the application'
-                echo 'Building the application'
+                git branch: 'main', url: 'https://github.com/prash405/javaProject.git'
             }
         }
         stage('Test'){
